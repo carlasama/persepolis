@@ -6,14 +6,14 @@
         <img src="../assets/persopolis.svg" alt="logo" />
       </div>
       <div class="row">
-        <div class="col-4 text-grey-span mt-4">
+        <div class="col-md-4 text-grey-span mt-4">
           <p>CNPJ: 47.492.267/0001-07</p>
           <p>Rua Ernestina Amaro Torelly, 100</p>
           <p>Bairro Bom Jesus</p>
           <p>CEP: 91430-100 - Porto Alegre/RS</p>
           <p>Atendimento: Segunda a Sábado, das 8:30h às 18:00h</p>
         </div>
-        <div class="col-4 text-grey-span mt-4">
+        <div class="col-md-4 text-grey-span mt-4">
           <p class="d-flex mb-3">
             <img
               src="../assets/icones/email.svg"
@@ -46,7 +46,7 @@
             >
           </p>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-12"> <!-- Adicione a classe col-12 aqui -->
           <p class="text-pink-span">Assine o site!</p>
           <div class="d-flex" style="gap: 16px">
             <div class="form-group" style="width: 291px">

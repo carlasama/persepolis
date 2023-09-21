@@ -3,6 +3,7 @@ import Projetos from "./Projetos.vue";
 import Contato from "./Contato.vue";
 import MuseuQuebrada from "./MuseuQuebrada.vue";
 import OdsPersopolis from "./OdsPersopolis.vue";
+import OdsImgs from "./OdsImgs.vue"
 import Navbar from "./Navbar.vue";
 import FooterPersepolis from "./FooterPersepolis.vue";
 </script>
@@ -10,16 +11,18 @@ import FooterPersepolis from "./FooterPersepolis.vue";
 <template>
   <div id="app">
     <navbar></navbar>
-    
+
     <router-view />
 
-    <projetos></projetos>
+    <projetos id="projetos"></projetos>
 
-    <museu-quebrada></museu-quebrada>
+    <museu-quebrada id="museu-quebrada"></museu-quebrada>
 
-    <ods-persopolis></ods-persopolis>
+    <ods-persopolis id="ods-persopolis"></ods-persopolis>
 
-    <contato></contato>
+    <ods-imgs></ods-imgs>
+
+    <contato id="contato"></contato>
 
     <footer-persepolis></footer-persepolis>
   </div>

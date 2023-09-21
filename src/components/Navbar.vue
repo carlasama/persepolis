@@ -1,29 +1,29 @@
 <template>
-  <div class="w-100">
-    <div class="items d-flex justify-content-around align-items-center">
+  <div class="w-100 d-none d-lg-block">
+    <div class="items d-flex justify-content-around align-items-center ">
       <div class="d-flex justify-content-center align-items-center">
         <img class="mr-4" src="../assets/mini-logo.svg" alt="logo" />
         <img src="../assets/persopolis.svg" alt="logo" />
       </div>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div id="conteudoNavbarSuportado">
-          <ul class="navbar-nav mr-auto" style="gap: 32px;">
+          <ul class="navbar-nav mr-auto" style="gap: 32px">
             <li class="nav-item active">
-              <a class="nav-link" href="#"
+              <a class="nav-link" href="#sobre"
                 >Sobre <span class="sr-only">(página atual)</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Projetos</a>
+              <a class="nav-link" href="#projetos">Projetos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Museu da Quebrada</a>
+              <a class="nav-link" href="#museu-quebrada">Museu da Quebrada</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ODS's</a>
+              <a class="nav-link" href="#ods-persopolis">ODS's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contato</a>
+              <a class="nav-link" href="#contato">Contato</a>
             </li>
           </ul>
         </div>

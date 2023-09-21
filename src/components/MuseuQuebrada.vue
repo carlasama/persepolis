@@ -1,5 +1,5 @@
 <template>
-  <div class="container-museu">
+  <div class="container container-museu" style="max-width: 1280px">
     <div class="museu-quebrada">
       <h1 class="text-pink mt-5">Museu da Quebrada</h1>
       <h1 class="text-grey m-2">
@@ -24,22 +24,72 @@
         </li>
 
         <br />
-        Quer apoiar? Acesse a nossa <a href="">Loja</a>.</span
+        Quer apoiar? Acesse a nossa <a class="loja-link" href="">Loja</a>.</span
       >
     </div>
+    <carousel class="carousel-with-space mt-4" :perPage="3">
+      <slide>
+        <img src="src/assets/carousel/img1.png" style="margin-right: 10px" />
+      </slide>
+      <div class="spacer"></div>
+      <slide>
+        <img src="src/assets/carousel/img2.png" style="margin-right: 10px" />
+      </slide>
+      <div class="spacer"></div>
+      <slide>
+        <img src="src/assets/carousel/img3.png" style="margin-right: 10px" />
+      </slide>
+      <div class="spacer"></div>
+      <slide>
+        <img src="src/assets/carousel/img4.png" />
+      </slide>
+    </carousel>
   </div>
 </template>
 
 <script>
-export default {};
+import Vue from "vue";
+import VueCarousel from "vue-carousel";
+import { Carousel, Slide } from "vue-carousel";
+Vue.use(VueCarousel);
+
+export default {
+  components: {
+    Carousel,
+    Slide,
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
+.spacer {
+  width: 10px;
+  height: 1px;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.VueCarousel-dot--active {
+  background-color: #f40080 !important;
+}
+
+.carousel-item {
+  margin: 10px;
+}
+
 .container-museu {
-    display: flex;
-    width: 1280px;
-    padding: 48px 32px;
-    flex-direction: column;
-    margin: auto;
+  display: flex;
+  width: 1280px;
+  padding: 48px 32px;
+  flex-direction: column;
+  margin: auto;
+}
+
+.loja-link {
+    color: rgb(40, 65, 197);
+    text-decoration: revert;
 }
 </style>
