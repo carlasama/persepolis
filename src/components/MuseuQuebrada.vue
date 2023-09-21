@@ -29,19 +29,19 @@
     </div>
     <carousel class="carousel-with-space mt-4" :perPage="3">
       <slide>
-        <img src="src/assets/carousel/img1.png" style="margin-right: 10px" />
+        <img :src="img1" style="margin-right: 10px" />
       </slide>
       <div class="spacer"></div>
       <slide>
-        <img src="src/assets/carousel/img2.png" style="margin-right: 10px" />
+        <img :src="img2" style="margin-right: 10px" />
       </slide>
       <div class="spacer"></div>
       <slide>
-        <img src="src/assets/carousel/img3.png" style="margin-right: 10px" />
+        <img :src="img3" style="margin-right: 10px" />
       </slide>
       <div class="spacer"></div>
       <slide>
-        <img src="src/assets/carousel/img4.png" />
+        <img :src="img4" style="margin-right: 10px" />
       </slide>
     </carousel>
   </div>
@@ -52,6 +52,10 @@ import Vue from "vue";
 import VueCarousel from "vue-carousel";
 import { Carousel, Slide } from "vue-carousel";
 Vue.use(VueCarousel);
+import img1 from "@/assets/carousel/img1.png";
+import img2 from "@/assets/carousel/img2.png";
+import img3 from "@/assets/carousel/img3.png";
+import img4 from "@/assets/carousel/img4.png";
 
 export default {
   components: {
@@ -59,7 +63,12 @@ export default {
     Slide,
   },
   data() {
-    return {};
+    return {
+      img1,
+      img2,
+      img3,
+      img4,
+    };
   },
 };
 </script>
@@ -89,7 +98,7 @@ export default {
 }
 
 .loja-link {
-    color: rgb(40, 65, 197);
-    text-decoration: revert;
+  color: rgb(40, 65, 197);
+  text-decoration: revert;
 }
 </style>

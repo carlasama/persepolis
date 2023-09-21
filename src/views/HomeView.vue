@@ -1,9 +1,7 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="container">
     <section class="gallery">
-      <img src="src/assets/banner.svg" />
+      <img :src="banner"/>
     </section>
 
     <div class="container container-sobre" id="sobre">
@@ -30,6 +28,17 @@
     </div>
   </div>
 </template>
+<script>
+import banner from '@/assets/banner.svg';
+
+export default {
+data() {
+  return {
+    banner,
+  }
+},
+}
+</script>
 <style>
 *,
 *:before,
