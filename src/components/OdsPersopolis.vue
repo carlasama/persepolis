@@ -19,7 +19,7 @@
         igualitário.<br />
         <br />
         Saiba mais sobre as ODS’s em
-        <a href="https://brasil.un.org/pt-br/sdgs"
+        <a href="https://brasil.un.org/pt-br/sdgs" class="link"
           >https://brasil.un.org/pt-br/sdgs</a
         ></span
       >

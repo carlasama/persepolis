@@ -1,11 +1,13 @@
 <template>
   <div class="container-fluid mt-5">
     <div class="container">
-      <div class="d-flex justify-content-center align-items-center logo">
-        <img class="mr-4" src="../assets/mini-logo.svg" alt="logo" />
-        <img src="../assets/persopolis.svg" alt="logo" />
-      </div>
       <div class="row">
+        <div class="col-md-4 text-grey-span mt-4 d-flex justify-content-center">
+          <div class="d-flex justify-content-center align-items-center logo">
+            <img class="mr-4" src="./assets/mini-logo.svg" alt="logo" />
+            <img src="./assets/persopolis.svg" alt="logo" />
+          </div>
+        </div>
         <div class="col-md-4 text-grey-span mt-4">
           <p>CNPJ: 47.492.267/0001-07</p>
           <p>Rua Ernestina Amaro Torelly, 100</p>
@@ -16,7 +18,7 @@
         <div class="col-md-4 text-grey-span mt-4">
           <p class="d-flex mb-3">
             <img
-              src="../assets/icones/email.svg"
+              src="./assets/icones/email.svg"
               alt="logo"
               style="width: 20px"
               class="mr-2"
@@ -25,7 +27,7 @@
           </p>
           <p class="d-flex mb-3">
             <img
-              src="../assets/icones/whatsapp.svg"
+              src="./assets/icones/whatsapp.svg"
               alt="logo"
               style="width: 20px"
               class="mr-2"
@@ -34,7 +36,7 @@
           </p>
           <p class="d-flex mb-3">
             <img
-              src="../assets/icones/instagram.svg"
+              src="./assets/icones/instagram.svg"
               alt="logo"
               style="width: 20px"
               class="mr-2"
@@ -46,7 +48,7 @@
             >
           </p>
         </div>
-        <div class="col-md-4 col-12"> <!-- Adicione a classe col-12 aqui -->
+        <!-- <div class="col-md-4 col-12">
           <p class="text-pink-span">Assine o site!</p>
           <div class="d-flex" style="gap: 16px">
             <div class="form-group" style="width: 291px">
@@ -68,7 +70,7 @@
               Assinar
             </button>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <hr class="mt-4 mb-4 w-100" />

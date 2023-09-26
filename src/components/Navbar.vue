@@ -2,8 +2,8 @@
   <div class="w-100 d-none d-lg-block">
     <div class="items d-flex justify-content-around align-items-center ">
       <div class="d-flex justify-content-center align-items-center">
-        <img class="mr-4" src="../assets/mini-logo.svg" alt="logo" />
-        <img src="../assets/persopolis.svg" alt="logo" />
+        <img class="mr-4" src="./assets/mini-logo.svg" alt="logo" />
+        <img src="./assets/persopolis.svg" alt="logo" />
       </div>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div id="conteudoNavbarSuportado">
@@ -32,7 +32,7 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link d-flex" href="#"
-              >Loja<img class="ml-1" src="../assets/svgs/arrow-up-right.svg" />
+              >Loja<img class="ml-1" src="./assets/svgs/arrow-up-right.svg" />
             </a>
           </li>
         </ul>

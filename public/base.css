@@ -774,8 +774,3 @@ video {
   gap: 10px;
   border: 20px solid #ea8c06;
 }
-
-.link {
-  color: rgb(40, 65, 197);
-  text-decoration: revert;
-}

@@ -16,7 +16,7 @@
           <img
             class="arrow mr-2"
             :class="{ 'arrow-down': !item.isCollapsed }"
-            src="src/assets/svgs/arrow-right.svg"
+            src="./assets/arrow-right.svg"
           />
           <span class="span-pink" @click="toggleCollapse(item.id)">{{
             item.title
