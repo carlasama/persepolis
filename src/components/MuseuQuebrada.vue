@@ -29,19 +29,27 @@
     </div>
     <carousel class="carousel-with-space mt-4" :perPage="3">
       <slide>
-        <img src="./assets/carousel/img1.png" style="margin-right: 10px" />
+        <img src="./assets/carousel/img1.png" style="margin-right: 5px" />
       </slide>
       <div class="spacer"></div>
       <slide>
-        <img src="./assets/carousel/img2.png" style="margin-right: 10px" />
+        <img src="./assets/carousel/img2.png" style="margin-right: 5px" />
       </slide>
       <div class="spacer"></div>
       <slide>
-        <img src="./assets/carousel/img3.png" style="margin-right: 10px" />
+        <img src="./assets/carousel/img3.png" style="margin-right: 5px" />
       </slide>
       <div class="spacer"></div>
       <slide>
-        <img src="./assets/carousel/img4.png" />
+        <img src="./assets/carousel/img4.png" style="margin-right: 5px" />
+      </slide>
+      <div class="spacer"></div>
+      <slide>
+        <img src="./assets/carousel/img5.png" style="margin-right: 5px" />
+      </slide>
+      <div class="spacer"></div>
+      <slide>
+        <img src="./assets/carousel/img6.png" />
       </slide>
     </carousel>
   </div>
