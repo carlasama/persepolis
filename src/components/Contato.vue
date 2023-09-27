@@ -4,7 +4,7 @@
         <div class="row w-100">
           <div class="col">
             <h1 class="text-grey d-flex justify-content-start">
-              Entre em Contato
+              Entre em contato
             </h1>
             <span class="text-grey-span"
               >Quer saber mais sobre os projetos? <br />

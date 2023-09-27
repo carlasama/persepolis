@@ -1,7 +1,7 @@
 <template>
   <div class="container container-museu" style="max-width: 1280px">
     <div class="museu-quebrada">
-      <h1 class="text-pink mt-5">Museu da Quebrada</h1>
+      <h1 class="text-pink">Museu da Quebrada</h1>
       <h1 class="text-grey m-2">
         Computadores Populares - Tecnologia da Periferia
       </h1>
