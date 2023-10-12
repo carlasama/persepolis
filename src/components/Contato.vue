@@ -186,6 +186,9 @@ export default {
   background-color: rgb(61, 61, 225);
 }
 
-
-
+@media (max-width: 768px) {
+  .contato {
+    margin: 8px;
+  }
+}
 </style>
