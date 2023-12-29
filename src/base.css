@@ -739,6 +739,7 @@ video {
   font-style: normal;
   font-weight: 400;
   line-height: 30px; /* 187.5% */
+  text-align: justify;
 }
 
 .text-pink-span {

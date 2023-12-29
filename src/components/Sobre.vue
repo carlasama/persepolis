@@ -6,7 +6,7 @@
 
     <div class="container container-sobre" id="sobre">
       <div class="container" style="max-width: 1280px;">
-        <h1 class="text-pink mt-5">Sobre</h1>
+        <h1 class="text-pink text-center mt-5">Sobre</h1>
 
         <h1 class="text-grey p-2">Persepolis Escola Livre</h1>
         <span class="text-grey-span"

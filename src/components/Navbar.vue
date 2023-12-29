@@ -31,7 +31,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link d-flex" href="#"
+            <a class="nav-link d-flex" href="https://persepolis-escola-livre-ltda.lojaintegrada.com.br"
               >Loja<img class="ml-1" src="./assets/svgs/arrow-up-right.svg" />
             </a>
           </li>

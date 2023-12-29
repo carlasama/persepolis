@@ -24,7 +24,7 @@
         </li>
 
         <br />
-        Quer apoiar? Acesse a nossa <a class="link" href="">Loja</a>.</span
+        Quer apoiar? Acesse a nossa <a class="link" href="https://persepolis-escola-livre-ltda.lojaintegrada.com.br">Loja</a>.</span
       >
     </div>
     <carousel class="carousel-with-space mt-4" :perPage="3">

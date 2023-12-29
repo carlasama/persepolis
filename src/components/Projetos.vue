@@ -1,9 +1,20 @@
 <template>
   <div class="w-100 m-auto" style="max-width: 1380px">
-    <div class="projetos mt-5">
+    <div
+      class="projetos mt-5"
+      :class="{ 'projetos-container-expanded': expandedItemId }"
+    >
       <h1 class="text-pink">Projetos</h1>
-      <h1 class="text-grey">Iniciativas voltadas para o futuro</h1>
-      <span class="text-grey-span">
+      <h1
+        class="text-grey"
+        :class="{ 'text-grey-span-expanded': expandedItemId }"
+      >
+        Iniciativas voltadas para o futuro
+      </h1>
+      <span
+        class="text-grey-span"
+        :class="{ 'text-grey-span-expanded': expandedItemId }"
+      >
         A periferia sempre produziu tecnologia de forma criativa, nos modos de
         fazer, nas gambiarras e na construção coletiva. <br />
         O que produzimos aqui dentro precisa ser acessível.
@@ -24,37 +35,42 @@
             }}</span>
           </div>
           <span
-            class="text-grey-span"
+            class="text-grey-span descricao"
             v-show="!item.isCollapsed && item.id === expandedItemId"
           ></span>
         </div>
-        <div class="row">
-          <div class="info-project" v-if="expandedItemId === item.id">
+        <div class="row" style="display: grid">
+          <div
+            class="card info-project"
+            v-if="expandedItemId === item.id"
+            :class="{ expanded: expandedItemId === item.id }"
+          >
             <!-- <p class="collapse-title">{{ item.title }}</p> -->
-            <div class="container">
+            <div class="container container-content mt-3">
+              <p class="collapse-title">{{ item.title }}</p>
               <p class="collapse-subtitle">{{ item.subtitle }}</p>
-              <p class="text-grey-span">
+              <p class="text-grey-span m-3">
                 {{ item.expandedContent }}
               </p>
             </div>
             <img
               v-if="item.id == 1"
-              class="mt-4 item-img"
+              class="item-img"
               src="./assets/item1.png"
             />
             <img
               v-if="item.id == 2"
-              class="mt-4 item-img"
+              class="item-img"
               src="./assets/item2.png"
             />
             <img
               v-if="item.id == 3"
-              class="mt-4 item-img"
+              class="item-img"
               src="./assets/item3.png"
             />
             <img
               v-if="item.id == 4"
-              class="mt-4 item-img"
+              class="item-img"
               src="./assets/item4.png"
             />
           </div>
@@ -108,7 +124,7 @@ export default {
           content:
             "<b>Destinação Sustentável:</b><br> Promovendo a Reciclagem Responsável e a Economia Circular dos eletrônicos.",
           expandedContent:
-            "Oferecemos um serviço de destinação correta para o seu eletrônico, garantindo a recolha gratuita do seu dispositivo. Nosso foco principal é a reciclagem de resíduos eletrônicos, como computadores, notebooks, celulares, tablets e outros dispositivos sem uso. Nossa abordagem abrange a coleta, reciclagem, recondicionamento, manutenção e revenda de sucata e equipamentos eletrônicos. Ao reciclar os resíduos de equipamentos eletroeletrônicos (REEE), extraímos matérias-primas que são fornecidas a parceiros e outras indústrias. Dessa forma, promovemos a reversão logística do lixo de alta tecnologia, contribuindo para a economia circular. Além disso, nossa iniciativa gera renda e empregabilidade, beneficiando as comunidades periféricas da cidade. Ao mesmo tempo, evitamos danos graves à saúde humana e ao meio ambiente.",
+            "Oferecemos um serviço de destinação correta para o seu eletrônico, garantindo a recolha gratuita do seu dispositivo. Nosso foco principal é a reciclagem de resíduos eletrônicos, como computadores, notebooks, celulares, tablets e outros dispositivos sem uso. Nossa abordagem abrange a coleta, reciclagem, recondicionamento, manutenção e revenda de sucata e equipamentos eletrônicos. Ao reciclar os resíduos de equipamentos eletroeletrônicos (REEE), extraímos matérias-primas que são fornecidas a parceiros e outras indústrias. Dessa forma, promovemos a reversão logística do lixo de alta tecnologia, contribuindo para a economia circular.",
         },
       ],
       expandedItemId: null,
@@ -153,6 +169,7 @@ export default {
   gap: 10px;
   border: 20px solid #29aaaa;
   position: relative;
+  background-color: #f9f9f9;
 }
 
 /* .nova-div {
@@ -194,7 +211,7 @@ export default {
 }
 */
 
-.collapse-subtitle {
+.collapse-title {
   background: var(--primrias-amarelo, #ea8c06);
   color: var(--bsicas-preto, #161616);
   font-family: Montserrat;
@@ -207,8 +224,17 @@ export default {
   margin: 10px 0 10px 0px;
 }
 
+.collapse-subtitle {
+  color: var(--Bsicas-Preto, #161616);
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 42px;
+}
+
 @media (max-width: 768px) {
-  .collapse-subtitle {
+  .collapse-title {
     font-size: 24px;
     line-height: 28px;
     padding: 0px 5px;
@@ -231,11 +257,97 @@ export default {
 }
 
 .item-img {
-  width: 600px;
+  width: fit-content;
 }
 
 .arrow-down {
   transform: rotate(90deg);
   transition: transform 0.3s ease;
+}
+
+.expanded {
+  grid-column: span 6;
+  margin-left: 85%;
+  position: absolute;
+  z-index: 10;
+  width: 828.608px;
+  transform: translateX(-75%);
+  bottom: auto;
+  top: -70px;
+}
+
+.card.info-project.expanded {
+  border-radius: 28px;
+  border-left: 20px solid var(--Primrias-Rosa, #f40080);
+  background: var(--Bsicas-Branco, #f9f9f9);
+  background-color: #f9f9f9;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+  box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+}
+
+.text-grey-span-expanded {
+  width: 40%;
+  display: flex;
+  text-align: left;
+}
+
+.projetos-container-expanded {
+  margin-top: 80px !important;
+  margin-bottom: 350px;
+}
+
+@media (max-width: 1280px) {
+  .card.info-project.expanded {
+    margin-left: 0;
+    padding: 0;
+    position: relative;
+    width: auto;
+    transform: none;
+    bottom: 0;
+    top: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .text-grey-span-expanded {
+    width: 100%;
+  }
+
+  .text-grey-span {
+    margin: 0 !important;
+  }
+
+  .collapse-title {
+    display: none;
+  }
+
+  .collapse-subtitle {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .projetos-container-expanded {
+    margin: 0;
+  }
+
+  .item-img {
+    margin-top: 15px;
+    width: -webkit-fill-available;
+  }
+
+  .text-grey {
+    margin: 10px 0 10px 0 !important;
+    font-size: 25px;
+    line-height: 1.2;
+    text-align: left;
+    padding: 0 !important;
+  }
+
+  .text-pink {
+    text-align: left;
+  }
 }
 </style>

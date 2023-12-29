@@ -1,7 +1,7 @@
 <template>
     <div class="w-100 m-auto" style="max-width: 1380px;">
       <div class="contato mt-5">
-        <div class="row w-100">
+        <div class="row w-100 contato-container">
           <div class="col">
             <h1 class="text-grey d-flex justify-content-start">
               Entre em contato
@@ -189,6 +189,11 @@ export default {
 @media (max-width: 768px) {
   .contato {
     margin: 8px;
+  }
+
+  .contato-container {
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
