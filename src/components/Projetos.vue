@@ -4,75 +4,117 @@
       class="projetos mt-5"
       :class="{ 'projetos-container-expanded': expandedItemId }"
     >
-      <h1 class="text-pink">Projetos</h1>
-      <h1
-        class="text-grey"
-        :class="{ 'text-grey-span-expanded': expandedItemId }"
-      >
-        Iniciativas voltadas para o futuro
-      </h1>
-      <span
-        class="text-grey-span"
-        :class="{ 'text-grey-span-expanded': expandedItemId }"
-      >
-        A periferia sempre produziu tecnologia de forma criativa, nos modos de
-        fazer, nas gambiarras e na construção coletiva. <br />
-        O que produzimos aqui dentro precisa ser acessível.
-      </span>
+      <div class="sobre-projetos">
+        <h1 class="text-pink">Projetos</h1>
+        <h1
+          class="text-grey"
+          :class="{ 'text-grey-span-expanded': expandedItemId }"
+        >
+          Iniciativas voltadas para o futuro
+        </h1>
+        <span
+          class="text-grey-span"
+          :class="{ 'text-grey-span-expanded': expandedItemId }"
+        >
+          A periferia sempre produziu tecnologia de forma criativa, nos modos de
+          fazer, nas gambiarras e na construção coletiva. <br />
+          O que produzimos aqui dentro precisa ser acessível.
+        </span>
+      </div>
 
-      <div class="item" v-for="item in items" :key="item.id">
-        <div class="row">
-          <div
-            class="d-flex align-items-center justify-content-start items-collapse"
-          >
-            <img
-              class="arrow mr-2"
-              :class="{ 'arrow-down': !item.isCollapsed }"
-              src="./assets/arrow-right.svg"
-            />
-            <span class="span-pink" @click="toggleCollapse(item.id)">{{
-              item.title
-            }}</span>
-          </div>
-          <span
-            class="text-grey-span descricao"
-            v-show="!item.isCollapsed && item.id === expandedItemId"
-          ></span>
-        </div>
-        <div class="row" style="display: grid">
-          <div
-            class="card info-project"
-            v-if="expandedItemId === item.id"
-            :class="{ expanded: expandedItemId === item.id }"
-          >
-            <!-- <p class="collapse-title">{{ item.title }}</p> -->
-            <div class="container container-content mt-3">
-              <p class="collapse-title">{{ item.title }}</p>
-              <p class="collapse-subtitle">{{ item.subtitle }}</p>
-              <p class="text-grey-span m-3">
-                {{ item.expandedContent }}
-              </p>
+      <div class="item-container">
+        <div class="item" v-for="item in items" :key="item.id">
+          <div class="row">
+            <div
+              class="d-flex align-items-center justify-content-start items-collapse"
+            >
+              <div class="content-project d-flex flex-column">
+                <div class="d-flex">
+                  <img
+                    class="arrow mr-2"
+                    :class="{ 'arrow-down': !item.isCollapsed }"
+                    src="./assets/arrow-right.svg"
+                  />
+                  <span class="span-pink" @click="toggleCollapse(item.id)">{{
+                    item.title
+                  }}</span>
+                </div>
+                <span
+                  v-if="!item.isCollapsed && item.id === expandedItemId"
+                  class="text-grey-span"
+                  v-html="formatContent(item.content)"
+                  :class="{
+                    'text-grey-span-expanded-two': expandedItemId,
+                    'item-diferente': item.id === 1,
+                  }"
+                  >{{ item.content }}</span
+                >
+              </div>
             </div>
-            <img
-              v-if="item.id == 1"
-              class="item-img"
-              src="./assets/item1.png"
-            />
-            <img
-              v-if="item.id == 2"
-              class="item-img"
-              src="./assets/item2.png"
-            />
-            <img
-              v-if="item.id == 3"
-              class="item-img"
-              src="./assets/item3.png"
-            />
-            <img
-              v-if="item.id == 4"
-              class="item-img"
-              src="./assets/item4.png"
-            />
+            <span
+              class="text-grey-span descricao"
+              v-show="!item.isCollapsed && item.id === expandedItemId"
+            ></span>
+          </div>
+          <div class="row" style="display: grid">
+            <div
+              class="card info-project"
+              v-if="expandedItemId === item.id"
+              :class="{ expanded: expandedItemId === item.id }"
+            >
+              <button
+                class="close-button"
+                @click="closeCard(item.id)"
+                :class="{ 'close-button': expandedItemId }"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                >
+                  <path
+                    d="M22.5 7.5L7.5 22.5M7.5 7.5L22.5 22.5"
+                    stroke="#484949"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <div class="container container-content mt-3">
+                <p class="collapse-title">{{ item.title }}</p>
+                <p class="collapse-subtitle">{{ item.subtitle }}</p>
+                <p
+                  class="text-grey-span m-3"
+                  v-html="formatContent(item.expandedContent)"
+                >
+                  {{ item.expandedContent }}
+                </p>
+              </div>
+              <img
+                v-if="item.id == 1"
+                class="item-img"
+                src="./assets/item1.png"
+              />
+              <img
+                v-if="item.id == 2"
+                class="item-img"
+                src="./assets/item2.png"
+              />
+              <img
+                v-if="item.id == 3"
+                class="item-img"
+                src="./assets/item3.png"
+              />
+              <img
+                v-if="item.id == 4"
+                class="item-img"
+                src="./assets/item4.png"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -101,7 +143,7 @@ export default {
           isCollapsed: true,
           subtitle: "Laboratório socioambiental e tecnológico",
           content:
-            "<b>Empoderando a Periferia:</b><br> Inclusão Digital e Sustentabilidade através do Recondicionamento de Eletrônicos.",
+            "Empoderando a Periferia: Inclusão Digital e Sustentabilidade através do Recondicionamento de Eletrônicos.",
           expandedContent:
             "Solução para inclusão digital de jovens da periferia e descarte de lixo eletrônico. Promovemos sustentabilidade recondicionando resíduos como computadores, notebooks, e celulares. Criamos uma economia circular, propondo a redução, reutilização, recuperação, e reciclagem de energia, compondo com uma logística reversa de materiais gerados através da obsolescência programada, gerando renda e inclusão digital na periferia.",
         },
@@ -111,7 +153,7 @@ export default {
           isCollapsed: true,
           subtitle: "Biblioteca de criação intuitiva",
           content:
-            "<b>Promovendo a Inclusão Digital e Cultural:</b><br>Aprendizado Intuitivo para Crianças da Região Leste.",
+            "Promovendo a Inclusão Digital e Cultural: Aprendizado Intuitivo para Crianças da Região Leste.",
           expandedContent:
             "A WikiBlackTeca é uma biblioteca que utiliza uma abordagem intuitiva de aprendizado para crianças da escola pública da região Leste. Ela oferece oficinas de comunicação, expressão criativa e percepção de si e do ambiente em que vivem. Além disso, a biblioteca disponibiliza ferramentas como leitura, escrita, linguagem de programação, bem como dispositivos de inovação, como computadores, tablets e kindles, para promover o acesso à cultura e ao conhecimento digital.",
         },
@@ -122,7 +164,7 @@ export default {
             "Sustentabilidade em Ação: Descarte Consciente de Eletrônicos",
           isCollapsed: true,
           content:
-            "<b>Destinação Sustentável:</b><br> Promovendo a Reciclagem Responsável e a Economia Circular dos eletrônicos.",
+            "Destinação Sustentável: Promovendo a Reciclagem Responsável e a Economia Circular dos eletrônicos.",
           expandedContent:
             "Oferecemos um serviço de destinação correta para o seu eletrônico, garantindo a recolha gratuita do seu dispositivo. Nosso foco principal é a reciclagem de resíduos eletrônicos, como computadores, notebooks, celulares, tablets e outros dispositivos sem uso. Nossa abordagem abrange a coleta, reciclagem, recondicionamento, manutenção e revenda de sucata e equipamentos eletrônicos. Ao reciclar os resíduos de equipamentos eletroeletrônicos (REEE), extraímos matérias-primas que são fornecidas a parceiros e outras indústrias. Dessa forma, promovemos a reversão logística do lixo de alta tecnologia, contribuindo para a economia circular.",
         },
@@ -131,6 +173,43 @@ export default {
     };
   },
   methods: {
+    formatContent(content) {
+      const wordsToBold = [
+        "jovens da quebrada",
+        "olhar",
+        "ferramentas de transformação social",
+        "disruptivo",
+        "crítico",
+        "visão",
+        "inclusiva",
+        "diversificada",
+        "inclusão digital de jovens",
+        "economia circular",
+        "logística reversa",
+        "abordagem intuitiva",
+        "comunicação",
+        "expressão",
+        "criativa",
+        "percepção de si",
+        "promover o acesso à cultura",
+        "reciclagem de resíduos eletrônicos",
+        "promovemos a reversão logística do lixo",
+        "renda",
+        "empregabilidade",
+        "descarte",
+        "Narrativas Periféricas Desconstruindo Fronteiras Culturais",
+        "Empoderando a Periferia",
+        "Promovendo a Inclusão Digital e Cultural",
+        "Destinação Sustentável",
+      ];
+
+      wordsToBold.forEach((word) => {
+        const regex = new RegExp(`\\b${word}\\b`, "gi");
+        content = content.replace(regex, `<strong>${word}</strong>`);
+      });
+
+      return content;
+    },
     toggleCollapse(itemId) {
       const item = this.items.find((i) => i.id === itemId);
       if (item) {
@@ -149,6 +228,9 @@ export default {
         }
       }
     },
+    closeCard(itemId) {
+      this.expandedItemId = null;
+    },
   },
 };
 </script>
@@ -163,30 +245,15 @@ export default {
 .projetos {
   border-radius: 28px;
   display: flex;
-  padding: 32px;
+  padding: 20px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
   border: 20px solid #29aaaa;
   position: relative;
   background-color: #f9f9f9;
+  box-shadow: 0 0 0 8px #29aaaa;
 }
-
-/* .nova-div {
-  position: absolute;
-  top: -50px;
-  border-radius: 28px;
-  right: -20px;
-  width: 50%;
-  height: 180%;
-  background-color: white;
-  border-left: 20px solid var(--primrias-rosa, #f40080);
-  box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
-  padding: 16px;
-  z-index: 2;
-  bottom: 0;
-  margin-bottom: 20px;
-} */
 
 .collapse-title {
   background: var(--primrias-amarelo, #ea8c06);
@@ -199,17 +266,6 @@ export default {
   font-weight: 700;
   display: flex;
 }
-
-/* .collapse-subtitle {
-  color: var(--bsicas-preto, #161616);
-  font-family: Montserrat;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 42px;
-  padding: 10px 0 10px 0;
-}
-*/
 
 .collapse-title {
   background: var(--primrias-amarelo, #ea8c06);
@@ -233,7 +289,27 @@ export default {
   line-height: 42px;
 }
 
+.sobre-projetos {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  gap: 16px;
+}
+
 @media (max-width: 768px) {
+  .logo {
+    margin-bottom: 28px;
+  }
+
+  .text-pink {
+    display: flex;
+  }
+
+  .text-grey-span-expanded-two,
+  .close-button {
+    display: none;
+  }
+
   .collapse-title {
     font-size: 24px;
     line-height: 28px;
@@ -260,6 +336,12 @@ export default {
   width: fit-content;
 }
 
+.item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  margin-top: 24px;
+}
 .arrow-down {
   transform: rotate(90deg);
   transition: transform 0.3s ease;
@@ -267,7 +349,7 @@ export default {
 
 .expanded {
   grid-column: span 6;
-  margin-left: 85%;
+  margin-left: 87%;
   position: absolute;
   z-index: 10;
   width: 828.608px;
@@ -288,9 +370,18 @@ export default {
 }
 
 .text-grey-span-expanded {
-  width: 40%;
+  width: 55%;
   display: flex;
   text-align: left;
+}
+
+.text-grey-span-expanded-two {
+  width: 60%;
+  text-align: left;
+}
+
+.item-diferente {
+  width: 100%;
 }
 
 .projetos-container-expanded {
@@ -323,10 +414,18 @@ export default {
     display: none;
   }
 
+  .text-grey-span-expanded-two,
+  .close-button {
+    display: none;
+  }
+
+  .container {
+    min-width: 100%;
+  }
+
   .collapse-subtitle {
     font-size: 22px;
     font-weight: 600;
-    text-transform: uppercase;
   }
 
   .projetos-container-expanded {
@@ -349,5 +448,15 @@ export default {
   .text-pink {
     text-align: left;
   }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
 }
 </style>

@@ -769,11 +769,12 @@ video {
 .contato {
   border-radius: 28px;
   display: flex;
-  padding: 32px;
+  padding: 20px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
   border: 20px solid #ea8c06;
+  box-shadow: 0 0 0 8px #ea8c06;
 }
 
 .link {

@@ -55,5 +55,6 @@
   padding: 48px 32px;
   flex-direction: column;
   margin: auto;
+  margin-top: 48px;
 }
 </style>

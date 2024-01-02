@@ -24,7 +24,12 @@
         </li>
 
         <br />
-        Quer apoiar? Acesse a nossa <a class="link" href="https://persepolis-escola-livre-ltda.lojaintegrada.com.br">Loja</a>.</span
+        Quer apoiar? Acesse a nossa
+        <a
+          class="link"
+          href="https://persepolis-escola-livre-ltda.lojaintegrada.com.br"
+          >Loja</a
+        >.</span
       >
     </div>
     <carousel class="carousel-with-space mt-4" :perPage="3">
@@ -94,5 +99,7 @@ export default {
   padding: 48px 32px;
   flex-direction: column;
   margin: auto;
+  padding-bottom: 0;
+  margin-top: 96px;
 }
 </style>
