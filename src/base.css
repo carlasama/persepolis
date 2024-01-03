@@ -739,7 +739,16 @@ video {
   font-style: normal;
   font-weight: 400;
   line-height: 30px; /* 187.5% */
-  text-align: justify;
+  text-align: left;
+}
+
+.text-grey-span-credits {
+  color: var(--Primrias-Cinza---Texto-Light, #667085);
+  font-family: Work Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .text-pink-span {
@@ -774,6 +783,8 @@ video {
   align-items: flex-start;
   gap: 10px;
   border: 20px solid #ea8c06;
+  position: relative;
+  background-color: #f9f9f9;
   box-shadow: 0 0 0 8px #ea8c06;
 }
 

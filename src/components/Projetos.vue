@@ -319,6 +319,7 @@ export default {
 
   .projetos {
     margin: 8px;
+    box-shadow: none;
   }
 }
 

@@ -1,8 +1,51 @@
 <template>
   <div class="container">
-    <section class="gallery">
-      <img src="./assets/banner.svg" />
-    </section>
+    <div class="sobre-banner d-none d-md-flex align-items-center">
+      <section class="gallery">
+        <svg
+          class="img-fluid"
+          width="1006"
+          height="880"
+          viewBox="0 0 1006 880"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M218.132 632.65H143.702L0 879.925H218.132V632.65Z"
+            fill="#EA8C06"
+          />
+          <path
+            d="M787.634 632.65H862.063L1005.69 879.925H787.634V632.65Z"
+            fill="#EA8C06"
+          />
+          <path
+            d="M331.569 340.831H300.034L157.527 589.974H331.569V340.831Z"
+            fill="#29AAAA"
+          />
+          <path
+            d="M674.05 340.831H705.66L848.092 589.974H674.05V340.831Z"
+            fill="#29AAAA"
+          />
+          <path
+            d="M400.143 322.297L359.666 568.131L604.025 608.365L644.502 362.532L400.143 322.297Z"
+            fill="#29AAAA"
+          />
+          <path
+            d="M503.891 0L335.08 298.165H672.179L503.891 0Z"
+            fill="#F40080"
+          />
+          <path d="M740.63 632.65H264.388V880H740.63V632.65Z" fill="#EA8C06" />
+        </svg>
+      </section>
+
+      <div class="col info-banner">
+        <p class="title-banner">Tecnologia nas periferias</p>
+        <p class="subtitle-banner">
+          Construímos a educação com base em metodologias que colocam o aluno
+          como protagonista e não como espectador.
+        </p>
+      </div>
+    </div>
 
     <div class="container container-sobre" id="sobre">
       <div class="container" style="max-width: 1280px">
@@ -27,8 +70,12 @@
       </div>
     </div>
 
-    <button  v-show="showScrollButton" @click="scrollToTop" class="scroll-to-top">
-      <svg style="backdrop-filter: blur(2px);"
+    <button
+      v-show="showScrollButton"
+      @click="scrollToTop"
+      class="scroll-to-top"
+    >
+      <svg
         width="48"
         height="48"
         viewBox="0 0 48 48"
@@ -76,7 +123,7 @@
 </template>
 <script>
 export default {
-    data() {
+  data() {
     return {
       showScrollButton: false,
     };
@@ -117,5 +164,52 @@ div#sobre {
   cursor: pointer;
   outline: none;
   z-index: 10;
+}
+
+.title-banner {
+  color: var(--Bsicas-Preto, #161616);
+  font-family: Montserrat;
+  font-size: 57px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 105.263% */
+  letter-spacing: -1.14px;
+}
+
+.subtitle-banner {
+  width: 454px;
+  color: var(--Bsicas-Preto, #161616);
+  font-family: Work Sans;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  align-self: stretch;
+}
+
+.info-banner {
+  position: relative;
+  right: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sobre-banner {
+  justify-content: space-between;
+}
+
+@media (min-width: 765px) and (max-width: 1532px) {
+  .info-banner {
+    left: 0;
+  }
+
+  .title-banner {
+    font-size: 30px;
+  }
+
+  .subtitle-banner {
+    font-size: 20px;
+  }
 }
 </style>
