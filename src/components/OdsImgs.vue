@@ -43,49 +43,48 @@
 
     <div v-else class="mobile-div">
       <div class="row justify-content-center">
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img
             src="./assets/ods/erradicacao-pobreza.svg"
             alt="Imagem"
             class="img-fluid"
           />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img src="./assets/ods/educacao.svg" alt="Imagem" class="img-fluid" />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img src="./assets/ods/trabalho.svg" alt="Imagem" class="img-fluid" />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img
             src="./assets/ods/industria.svg"
             alt="Imagem"
             class="img-fluid"
           />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img src="./assets/ods/reducao.svg" alt="Imagem" class="img-fluid" />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img src="./assets/ods/cidades.svg" alt="Imagem" class="img-fluid" />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img src="./assets/ods/consumo.svg" alt="Imagem" class="img-fluid" />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img src="./assets/ods/vida.svg" alt="Imagem" class="img-fluid" />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img src="./assets/ods/paz.svg" alt="Imagem" class="img-fluid" />
         </div>
-        <div class="col-6 col-sm-4 p-2">
+        <div class="col-4 col-sm-3 p-2">
           <img
             src="./assets/ods/parcerias.svg"
             alt="Imagem"
             class="img-fluid"
           />
         </div>
-        <!-- Repita o bloco de img para as outras imagens -->
       </div>
     </div>
   </div>

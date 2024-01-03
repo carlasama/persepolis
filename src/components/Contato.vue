@@ -253,8 +253,12 @@ export default {
   font-family: Work Sans;
 }
 
-.model-content {
+.form-control {
   background-color: #F9F9F9;
+}
+
+.model-content {
+  background-color: #f9f9f9;
   border: none !important;
 }
 
@@ -285,6 +289,14 @@ export default {
     flex-direction: column;
   }
 
+  .contato {
+    margin-left: 8px;
+    margin-right: 8px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1280px) {
   .contato {
     margin-left: 8px;
     margin-right: 8px;

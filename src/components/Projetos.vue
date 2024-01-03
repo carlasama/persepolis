@@ -316,11 +316,6 @@ export default {
     padding: 0px 5px;
     margin: 5px 0 5px 0px;
   }
-
-  .projetos {
-    margin: 8px;
-    box-shadow: none;
-  }
 }
 
 .align {
@@ -431,6 +426,11 @@ export default {
 
   .projetos-container-expanded {
     margin: 0;
+  }
+
+  .projetos {
+    margin: 8px;
+    box-shadow: none;
   }
 
   .item-img {

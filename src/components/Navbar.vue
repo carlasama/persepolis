@@ -145,8 +145,7 @@ a.dropdown-item {
 
 @media (max-width: 768px) {
   .items {
-    padding: 10px;
-    margin: 0;
+    padding: 0 35px 0 35px;
     display: flex !important;
     justify-content: space-between !important;
   }
